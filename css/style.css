@@ -1,0 +1,108 @@
+body {
+    background-image: linear-gradient(to right, rgb(5, 1, 46), rgb(8, 6, 24));
+    font-family: 'Arial', Helvetica, sans-serif;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.title {
+    text-decoration: 4px overline underline white;
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+#inputItem {
+    background-color: transparent;
+    height: 50px;
+    width: 350px;
+    color: white;
+    font-size: 20px;
+    border-radius: 10px;
+    padding-left: 15px;
+    border: 1px solid white;
+    transition: all 0.3s ease;
+}
+
+#inputItem:focus {
+    border-color: #00bfae;
+    outline: none;
+}
+
+#inputItem::placeholder {
+    color: white;
+}
+
+#addItemBtn, #clearBtn {
+    border-radius: 10px;
+    background-color: rgb(30, 21, 131);
+    border: 1px solid white;
+    color: white;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    transition: all 0.3s ease;
+}
+
+#addItemBtn:hover {
+    background-color: green;
+}
+
+#clearBtn:hover {
+    background-color: red;
+}
+
+#taskList {
+    width: 400px;
+    padding-left: 20px;
+}
+
+#taskList li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2d2d2d;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+#taskList li button {
+    background-color: red;
+    border-radius: 10px;
+    color: white;
+    border: 1px solid white;
+    padding: 8px 12px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#taskList li button:hover {
+    background-color: #ff5c5c;
+}
+
+#taskList li::before {
+    content: counter(item) ". ";
+    counter-increment: item;
+    font-weight: bold;
+}
+
+#taskList {
+    counter-reset: item;
+}
